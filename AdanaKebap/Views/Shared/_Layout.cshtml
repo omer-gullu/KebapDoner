@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @await Component.InvokeAsync("_HeadPartial")
+</head>
+<body>
+    @await Component.InvokeAsync("_SpinnerPartial")
+    <header>
+        @await Component.InvokeAsync("_NavbarPartial")
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--Footer Start-->
+    @await Component.InvokeAsync("_FooterPartial")
+    <!--Footer End-->
+    <!--Back To Start-->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!--Scripts Start-->
+    @await Component.InvokeAsync("_ScriptsPartial")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
