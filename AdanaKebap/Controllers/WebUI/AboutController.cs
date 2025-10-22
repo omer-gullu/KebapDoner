@@ -4,6 +4,7 @@ namespace AdanaKebap.Controllers.WebUI
 {
     public class AboutController : Controller
     {
+        [Route("Hakkimizda")]
         public IActionResult Index()
         {
             return View();

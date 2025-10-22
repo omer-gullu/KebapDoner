@@ -10,6 +10,7 @@ namespace AdanaKebap.Models.WebUI
         public DateTime Date { get; set; }
         public int PersonCount { get; set; }
         public string Message { get; set; }
-        public Reservation Reservation { get; set; }
+
+      
     }
 }

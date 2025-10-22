@@ -22,34 +22,27 @@ namespace AdanaKebap.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AdanaKebap.Models.Admin.Reservation", b =>
+            modelBuilder.Entity("AdanaKebap.Models.Admin.User", b =>
                 {
-                    b.Property<int>("ReservationID")
+                    b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReservationID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"));
 
-                    b.Property<int>("BookingID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
+                    b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
+                    b.HasKey("UserID");
 
-                    b.HasKey("ReservationID");
-
-                    b.ToTable("Reservations");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("AdanaKebap.Models.WebUI.Booking", b =>
@@ -78,30 +71,9 @@ namespace AdanaKebap.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ReservationID")
-                        .HasColumnType("int");
-
                     b.HasKey("BookingID");
 
-                    b.HasIndex("ReservationID");
-
                     b.ToTable("Bookings");
-                });
-
-            modelBuilder.Entity("AdanaKebap.Models.WebUI.Booking", b =>
-                {
-                    b.HasOne("AdanaKebap.Models.Admin.Reservation", "Reservation")
-                        .WithMany("Bookings")
-                        .HasForeignKey("ReservationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reservation");
-                });
-
-            modelBuilder.Entity("AdanaKebap.Models.Admin.Reservation", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }

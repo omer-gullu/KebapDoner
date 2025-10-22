@@ -1,15 +1,19 @@
 ﻿<div class="container-xxl position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-        <a href="" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Adana Sofrası</h1>
-            <!-- <img src="img/logo.png" alt="Logo"> -->
+
+        <a href="/Default/Index1" class="navbar-brand d-flex align-items-center">
+            <img src="~/restoran-1.0.0/img/logo.webp" loading="lazy" alt="logo" style="max-height:1px; margin:5px;" class="logo me-2" />
+            <h1 class="m-0 text-primary">Adana Sofrası</h1>
         </a>
+
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0 pe-4">
-                <a asp-controller="Default" asp-action="Index1"  class="nav-item nav-link active">Ana Sayfa</a>
+                <a asp-controller="Default" asp-action="Index1" class="nav-item nav-link ">Ana Sayfa</a>
                 <a asp-controller="About" asp-action="Index" class="nav-item nav-link">Hakkımızda</a>
                 <a asp-controller="Service" asp-action="Index" class="nav-item nav-link">Hizmetler</a>
                 <a asp-controller="Menu" asp-action="Index" class="nav-item nav-link">Menu</a>
@@ -22,8 +26,7 @@
                 </div>
                 <a asp-controller="Contact" asp-action="Index" class="nav-item nav-link">Bize Ulaşın</a>
             </div>
-            <a asp-controller="Booking" asp-action="Index" class="btn btn-primary py-2 px-4">Rezervasyon</a>
+            <a asp-controller="Account" asp-action="Login" class="btn btn-primary py-2 px-4">Giriş Yap</a>
         </div>
     </nav>
-
 </div>

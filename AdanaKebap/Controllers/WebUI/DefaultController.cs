@@ -2,12 +2,12 @@
 
 namespace AdanaKebap.Controllers.WebUI
 {
+    [Route("")]
+    [Route("anasayfa")]
     public class DefaultController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
+        
         public IActionResult Index1()
         {
             return View();

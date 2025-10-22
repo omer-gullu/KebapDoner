@@ -6,29 +6,36 @@
 <!--REZERVATİON İÇİN VİEW OLUŞTUR-->
 <!-- Navbar End-->
 <!-- Hero Start-->
-<div container-xxl position-relative p-0">
-
+<div class="container-xxl position-relative p-0">
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
         <div class="container my-5 py-5">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 text-center text-lg-start">
                     <h1 class="display-3 text-white animated slideInLeft">
-                        Lezzetin
-                         <br>Tadını Çıkarın
+                        Lezzetin<br>Tadını Çıkarın
                     </h1>
-                    <p class="text-white animated slideInLeft mb-4 pb-2">Özenle seçilmiş malzemelerle hazırladığımız lezzetli yemeklerimiz, her lokmada benzersiz bir tat deneyimi sunar. Siz de bu enfes lezzetleri keşfedin ve keyfini çıkarın!</p>
-                    <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Rezervasyon</a>
+                    <p class="text-white animated slideInLeft mb-4 pb-2">
+                        Özenle seçilmiş malzemelerle hazırladığımız lezzetli yemeklerimiz, her lokmada benzersiz bir tat deneyimi sunar. Siz de bu enfes lezzetleri keşfedin ve keyfini çıkarın!
+                    </p>
+                    <a href="#" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Rezervasyon</a>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                    <img class="img-fluid" src="~/restoran-1.0.0/img/hero.png" alt="">
+                    <img class="img-fluid"
+                         src="@(Url.Content("~/restoran-1.0.0/img/hero.webp"))"
+                         alt="Hero Görseli"
+                         width="1200" height="800"
+                         loading="lazy"
+                         fetchpriority="high">
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <!-- Hero End-->
 <!--Service Start-->
-@await Component.InvokeAsync("_ServicePartial")
+@await Component.InvokeAsync("_ServicePartial") 
 <!--Service End-->
 <!--About Start-->
 @await Component.InvokeAsync("_AboutPartial")
@@ -36,13 +43,14 @@
 <!--Menu start-->
 @await Component.InvokeAsync("_MenuPartial")
 <!--Menu End-->
-<!--Reservation & Youtube Start-->
-@await Component.InvokeAsync("_ReservationAndYouTube")
 
+<!--Reservation & Youtube Start-->
+@await Component.InvokeAsync("_BookingPartial")
 
 
 <!--Reservation & Youtube End-->
 <!--Testimonial Start-->
 @await Component.InvokeAsync("_TestimonialPartial")
 <!--Testimonial End-->
+
 
