@@ -25,29 +25,29 @@ namespace AdanaKebap.Controllers.WebUI
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Submit(BookingForModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+        //[HttpPost]
+        //public IActionResult Submit(BookingForModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
+        //    }
         
 
-            var booking = new Booking
-            {
+        //    var booking = new Booking
+        //    {
 
-                FullName = model.Name,
-                Phone = model.Phone,
-                Date = model.Date,
-                PersonCount = model.PersonCount,
-                Message = model.Message
+        //        FullName = model.Name,
+        //        Phone = model.Phone,
+        //        Date = model.Date,
+        //        PersonCount = model.PersonCount,
+        //        Message = model.Message
 
-            };
-            _context.Bookings.Add(booking);
-            _context.SaveChanges();
+        //    };
+        //    _context.Bookings.Add(booking);
+        //    _context.SaveChanges();
 
-            return RedirectToAction("Submit", "Booking");
-        }
+        //    return RedirectToAction("Submit", "Booking");
+        //}
     }
 }
